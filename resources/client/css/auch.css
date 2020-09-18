@@ -932,6 +932,9 @@ h2 {
   .banner_container__button {
     display: block;
   }
+    .banner_container__button_txt {
+        display: none;
+    }
   .banner_container__button button {
     cursor: pointer;
     padding: 10px 35px 10px 35px;
@@ -942,6 +945,33 @@ h2 {
             border-radius: 8px;
     font-size: 20px;
   }
+}
+
+
+.banner_container__button_txt button {
+    cursor: pointer;
+    padding: 10px 35px 10px 35px;
+    background-color: #161616;
+    color: #fff;
+    border: none;
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+    font-size: 20px;
+}
+
+.docs {
+    font-family: 'Lato', sans-serif;
+    display: block;
+    outline: none;
+    background: linear-gradient(to top,#eadc38,#fff71c);
+    color: #000;
+    border: 1px solid #eadc38;
+    border-radius: 2px;
+    cursor: pointer;
+    margin-top: 15px!important;
+    position: relative;
+    font-weight: 400!important;
+    border-radius: 15px;
 }
 
 /**

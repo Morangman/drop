@@ -87,30 +87,6 @@
         </div>
 </footer>
 
-<div class="auch">
-    <div class="auch_cont">
-        <div class="auch_cont__close"><img src="{{ asset('client/img/auch/png/dseeewww.png') }}" alt=""></div>
-        <div class="auch_cont1">
-            <div class="auch_cont__title">Для авторизации необходимо иметь страницу вконтакте:</div>
-            <div class="auch_cont__vk">
-{{--                <script type="text/javascript" src="https://vk.com/js/api/openapi.js?168"></script>--}}
-{{--                <script type="text/javascript">--}}
-{{--                    VK.init({apiId: 7347631});--}}
-{{--                </script>--}}
-
-                <!-- VK Widget -->
-                <div id="vk_auth"></div>
-{{--                <script type="text/javascript">--}}
-{{--                    VK.Widgets.Auth("vk_auth", {"authUrl":"/site/login"});--}}
-{{--                </script>                </div>--}}
-            <div class="auch_cont__subtitle">Возможно понадобится VPN</div>
-        </div>
-        <div class="auch_cont__info">Мы решили что так будет проще и удобней.<br> Не нужно никаких регистраций, простой вход.<br>Сайт запомнит вас на 30 дней,
-            повторный вход без VPN.</div>
-        </div>
-    </div>
-</div>
-
 <div id="modal_form">
     <span id="modal_close">X</span>
     <div id="feedbackform">

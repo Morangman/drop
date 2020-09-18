@@ -7,27 +7,27 @@
             <div class="header_line__menu">
                 <ul>
                     <li>
-                        <a href="#o-nas">О нас</a>
-                        <a href="#nachat">Начать сотрудничество</a>
-                        <a href="#nachat">Контакты</a>
-                        <a href="#reviews">Отзывы</a>
+                        <a class="hash" href="#o-nas">О нас</a>
+                        <a class="hash" href="#nachat">Начать сотрудничество</a>
+                        <a href="{{ $settings->getAttribute('general_settings')['prom'] }}">Прайс для prom.ua</a>
+                        <a class="hash" href="#nachat">Контакты</a>
+                        <a class="hash" href="#reviews">Отзывы</a>
                     </li>
                 </ul>
             </div>
-            <div class="header_line__button">
-                <button>Войти</button>
-            </div>
+            <div class="header_line__button"></div>
         </div>
         <div class="header_mob">
             <ul>
                 <li>
-                    <a href="#o-nas">О нас</a>
+                    <a class="hash" href="#o-nas">О нас</a>
                     <a href="#"><img src="{{ asset('client/img/auch/png/logo.png') }}" alt=""></a>
-                    <a href="#reviews">Отзывы</a>
+                    <a class="hash" href="#reviews">Отзывы</a>
                 </li>
                 <li>
-                    <a href="#nachat">Начать сотрудничество</a>
-                    <a href="#nachat">Наши контакты</a>
+                    <a class="hash" href="#nachat">Начать сотрудничество</a>
+                    <a href="{{ $settings->getAttribute('general_settings')['prom'] }}">Прайс для prom.ua</a>
+                    <a class="hash" href="#nachat">Наши контакты</a>
                 </li>
             </ul>
         </div>

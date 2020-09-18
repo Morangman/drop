@@ -112,6 +112,28 @@
                                 </div>
                                 <div class="form-group">
                                     <label>
+                                        <strong>Google docs</strong>
+                                    </label>
+                                    <input
+                                        name="google_docs"
+                                        type="text"
+                                        v-model="model.general_settings.gd"
+                                        class="form-control"
+                                    >
+                                </div>
+                                <div class="form-group">
+                                    <label>
+                                        <strong>Прайс prom.ua</strong>
+                                    </label>
+                                    <input
+                                        name="google_docs"
+                                        type="text"
+                                        v-model="model.general_settings.prom"
+                                        class="form-control"
+                                    >
+                                </div>
+                                <div class="form-group">
+                                    <label>
                                         <strong>Инстаграм Аккаунт</strong>
                                     </label>
                                     <input
@@ -292,6 +314,8 @@
                         manager: null,
                         vk: null,
                         tg: null,
+                        gd: null,
+                        prom: null,
                         inst: null,
                         phone: null,
                         seo_title: null,
