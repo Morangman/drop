@@ -41,27 +41,6 @@
                 </div>
             </div>
         </section>
-        <section class="social">
-            <div class="container">
-                <div class="social_items">
-                    <div class="social_items__item">
-                        <a href="{{ $settings->getAttribute('general_settings')['tg'] }}" target="_blank"><span class="telegram pc">Телеграм Канал</span></a>
-                        <a href="{{ $settings->getAttribute('general_settings')['tg'] }}" target="_blank"><span class="telegram mob">Телеграм</span></a>
-                        <p>3 400+ партнёров</p>
-                    </div>
-                    <div class="social_items__item">
-                        <a href="{{ $settings->getAttribute('general_settings')['vk'] }}" target="_blank"><span class="vk pc">Группа Вконтакте</span></a>
-                        <a href="{{ $settings->getAttribute('general_settings')['vk'] }}" target="_blank"><span class="vk mob">Вконтакте</span></a>
-                        <p>7 800+ партнёров</p>
-                    </div>
-                    <div class="social_items__item">
-                        <a href="{{ $settings->getAttribute('general_settings')['inst'] }}" target="_blank"><span class="inst pc">Наш Инстаграм</span></a>
-                        <a href="{{ $settings->getAttribute('general_settings')['inst'] }}" target="_blank"><span class="inst mob">Инстаграм</span></a>
-                        <p>610+ партнёров</p>
-                    </div>
-                </div>
-            </div>
-        </section>
         <section class="about" id="o-nas">
             <div class="container">
                 <div class="about_txt">
