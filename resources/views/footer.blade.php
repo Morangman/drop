@@ -20,6 +20,7 @@
                         <img src="{{ asset('client/img/auch/png/bank.png') }}" alt="">
                     </div>
                     <div class="footer__right__bank__info">
+                        <p>{!! $content['footer']['value'] !!}</p>
                         <p>{!! $content['footer_1']['value'] !!}</p>
                     </div>
                 </div>
@@ -72,6 +73,7 @@
                     <div class="footer__mob__foot__item__img">
                         <img src="{{ asset('client/img/auch/png/banks.png') }}" alt="">
                     </div>
+                    <p>{!! $content['footer']['value'] !!}</p>
                     <p>{!! $content['footer_1']['value'] !!}</p>
                 </div>
                 <div class="footer__mob__foot__item">
@@ -83,7 +85,6 @@
                 </div>
             </div>
         </div>
-    </div>
 </footer>
 
 <div id="modal_form">
