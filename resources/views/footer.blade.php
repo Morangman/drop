@@ -4,8 +4,6 @@
             <div class="footer__left">
                 <p>Связь с командой:</p>
                 <span class="city">{!! $content['footer_4']['value'] !!}</span>
-                <a href="{{ $settings->getAttribute('general_settings')['boss'] }}" target="_blank"><span class="director">Директор (предложения и пожелания)</span></a>
-                <a href="{{ $settings->getAttribute('general_settings')['buh'] }}" target="_blank"><span class="accountant">Бухгалтер (финансы, взаиморасчёты с партнёрами)</span></a>
                 <a href="{{ $settings->getAttribute('general_settings')['manager'] }}" target="_blank"><span class="manager">Менеджер (по заказам и сотрудничеству)</span></a>
             </div>
             <div class="footer__middle">
@@ -15,15 +13,6 @@
                 <a href="{{ $settings->getAttribute('general_settings')['inst'] }}" target="_blank"><span class="insta">Инстаграм Аккаунт</span></a>
             </div>
             <div class="footer__right">
-                <div class="footer__right__bank">
-                    <div class="footer__right__bank__image">
-                        <img src="{{ asset('client/img/auch/png/bank.png') }}" alt="">
-                    </div>
-                    <div class="footer__right__bank__info">
-                        <p>{!! $content['footer']['value'] !!}</p>
-                        <p>{!! $content['footer_1']['value'] !!}</p>
-                    </div>
-                </div>
                 <div class="footer__right__info">
                     <div class="footer__right__info__logo">
                         <img src="{{ asset('client/img/auch/png/logow.png') }}" alt="">
