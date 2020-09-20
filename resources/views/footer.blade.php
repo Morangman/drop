@@ -1,4 +1,4 @@
-<footer class="footer">
+<div class="footer">
     <div class="container">
         <div class="footer_cont">
             <div class="footer__left">
@@ -85,7 +85,7 @@
                 </div>
             </div>
         </div>
-</footer>
+</div>
 
 <div id="modal_form">
     <span id="modal_close">X</span>
