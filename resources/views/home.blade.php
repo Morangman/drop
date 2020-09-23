@@ -105,9 +105,7 @@
             </div>
         </section>
         <section class="art">
-            <div class="art_bg">
-                <img src="{{ asset('client/img/auch/jpg/art.jpg') }}" alt="">
-            </div>
+            <div class="line"></div>
         </section>
         <section class="kwest">
             <div class="container">
