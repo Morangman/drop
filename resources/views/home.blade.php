@@ -59,7 +59,7 @@
                     <div class="about_items__item">
                         <div class="about_items__item__img">
                             <img src="{{ asset('client/img/auch/png/us2.png') }}" alt="">
-                        </div>
+                        </div></br>
                         <div class="about_items__item__text">
                             <span>{!! $content['about_3']['value'] !!}</span>
                             <p>{!! $content['about_4']['value'] !!}</p>
@@ -153,28 +153,8 @@
                 </div>
             </div>
         </section>
-        <section class="reviews" id="reviews">
-            <div class="container">
-                <div class="reviews_txt">
-                    <span>{!! $content['otziv']['value'] !!}</span>
-                </div>
-                <div class="reviews_items">
-                    @foreach($comments as $comment)
-                    <div class="reviews_items__item">
-                        <div class="reviews_items__item__img">
-                            <img src="{{ asset('client/img/auch/png/review'.$comment->getKey().'.png') }}" alt="">
-                        </div>
-                        <div class="reviews_items__item__txt">
-                            <a href="{{ $comment->getAttribute('url') }}" target="_blank"><span>{{ $comment->getAttribute('name') }}</span></a>
-                            <p>{{ $comment->getAttribute('text') }}</p>
-                        </div>
-                    </div>
-                    @endforeach
-                </div>
-                <div class="reviews_button">
-                    <a href="{{ $settings->getAttribute('general_settings')['vkotzivi'] }}" target="_blank"><button>{!! $content['otziv_1']['value'] !!}</button></a>
-                </div>
-            </div>
+        <section class="reviews" id="reviews" style="margin-bottom: 60px;">
+            <div class="container"></div>
         </section>
         <section class="cooperate" id="nachat">
             <div class="container">
