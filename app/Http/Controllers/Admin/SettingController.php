@@ -78,12 +78,26 @@ class SettingController extends Controller
      */
     public function update(UpdateRequest $request, Setting $setting): JsonResponse
     {
+        $promExcel = '';
+        $seoImage = '';
+
+        if (isset($request->file('general_settings')['prom']) && $file = $request->file('general_settings')['prom']) {
+            $media = $setting->addMedia($file)
+                ->toMediaCollection(Setting::MEDIA_COLLECTION_SETTING);
+
+            $promExcel = $media->getFullUrl();
+        } else {
+            $promExcel = $request->get('general_settings')['prom'] ?? '';
+        }
+
         $settingData = $request->except(
                 [
                     'code_insert',
+                    'prom_excel',
                 ]
             ) + [
                 'code_insert' => $request->get('code_insert') ?? '',
+                'prom_excel' => $promExcel,
             ];
 
         $setting->update($settingData);
@@ -131,18 +145,27 @@ class SettingController extends Controller
      */
     protected function handleDocuments(Request $request, Setting $setting): void
     {
-        if ($settingSeoImage = $request->file('general_settings')['seo_image']) {
+        if (isset($request->file('general_settings')['seo_image']) && $settingSeoImage = $request->file('general_settings')['seo_image']) {
             $media = $setting->addMedia($settingSeoImage)
                 ->toMediaCollection(Setting::MEDIA_COLLECTION_SETTING);
 
-            $setting->update(['general_settings' => [
+            $setting->update([
+                'code_insert' => $request->get('code_insert') ?? '',
+                'prom_excel' => $request->get('prom_excel') ?? '',
+                'general_settings' => [
                 'email' => $request->get('general_settings')['email'] ?? null,
                 'contact_email' => $request->get('general_settings')['contact_email'] ?? null,
                 'phone' => $request->get('general_settings')['phone'] ?? null,
+                'manager' => $request->get('general_settings')['manager'] ?? null,
+                'vk' => $request->get('general_settings')['vk'] ?? null,
+                'tg' => $request->get('general_settings')['tg'] ?? null,
+                'gd' => $request->get('general_settings')['gd'] ?? null,
+                'inst' => $request->get('general_settings')['inst'] ?? null,
                 'seo_meta' => $request->get('general_settings')['seo_meta'] ?? null,
                 'seo_title' => $request->get('general_settings')['seo_title'] ?? null,
                 'seo_keywords' => $request->get('general_settings')['seo_keywords'] ?? null,
                 'seo_image' => $media->getFullUrl(),
+                'iframe_map' => $request->get('general_settings')['iframe_map'] ?? null,
                 'iframe_map' => $request->get('general_settings')['iframe_map'] ?? null,
             ]]);
         } elseif (
@@ -150,10 +173,18 @@ class SettingController extends Controller
             && $setting->getAttribute('general_settings')['seo_image']
             !== $image = $request->get('general_settings')['seo_image']
         ) {
-            $setting->update(['general_settings' => [
+            $setting->update([
+                'code_insert' => $request->get('code_insert') ?? '',
+                'prom_excel' => $request->get('prom_excel') ?? '',
+                'general_settings' => [
                 'email' => $request->get('general_settings')['email'] ?? null,
                 'contact_email' => $request->get('general_settings')['contact_email'] ?? null,
                 'phone' => $request->get('general_settings')['phone'] ?? null,
+                'manager' => $request->get('general_settings')['manager'] ?? null,
+                'vk' => $request->get('general_settings')['vk'] ?? null,
+                'tg' => $request->get('general_settings')['tg'] ?? null,
+                'gd' => $request->get('general_settings')['gd'] ?? null,
+                'inst' => $request->get('general_settings')['inst'] ?? null,
                 'seo_meta' => $request->get('general_settings')['seo_meta'] ?? null,
                 'seo_title' => $request->get('general_settings')['seo_title'] ?? null,
                 'seo_keywords' => $request->get('general_settings')['seo_keywords'] ?? null,

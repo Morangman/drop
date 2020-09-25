@@ -30,6 +30,7 @@ class Setting extends Model implements HasMedia
     protected $fillable = [
         'general_settings',
         'code_insert',
+        'prom_excel',
     ];
 
     /**
@@ -38,5 +39,6 @@ class Setting extends Model implements HasMedia
     protected $casts = [
         'general_settings' => 'array',
         'code_insert' => 'string',
+        'prom_excel' => 'string',
     ];
 }

@@ -46,39 +46,6 @@
                                 <h4>Ссылки</h4><br/>
                                 <div class="form-group">
                                     <label>
-                                        <strong>Отзывы</strong>
-                                    </label>
-                                    <input
-                                        name="phone"
-                                        type="text"
-                                        v-model="model.general_settings.vkotzivi"
-                                        class="form-control"
-                                    >
-                                </div>
-                                <div class="form-group">
-                                    <label>
-                                        <strong>Директор</strong>
-                                    </label>
-                                    <input
-                                        name="phone"
-                                        type="text"
-                                        v-model="model.general_settings.boss"
-                                        class="form-control"
-                                    >
-                                </div>
-                                <div class="form-group">
-                                    <label>
-                                        <strong>Бухгалтер</strong>
-                                    </label>
-                                    <input
-                                        name="phone"
-                                        type="text"
-                                        v-model="model.general_settings.buh"
-                                        class="form-control"
-                                    >
-                                </div>
-                                <div class="form-group">
-                                    <label>
                                         <strong>Менеджер</strong>
                                     </label>
                                     <input
@@ -125,12 +92,12 @@
                                     <label>
                                         <strong>Прайс prom.ua</strong>
                                     </label>
-                                    <input
-                                        name="google_docs"
-                                        type="text"
-                                        v-model="model.general_settings.prom"
-                                        class="form-control"
-                                    >
+                                    <b-form-file
+                                        class="mt-1"
+                                        accept=".xlsx,.xls"
+                                        @change="showPromFile($event)"
+                                    ></b-form-file>
+                                    <a v-if="model.prom_excel" :href="model.prom_excel">Prom.ua прайс</a>
                                 </div>
                                 <div class="form-group">
                                     <label>
@@ -308,9 +275,6 @@
                     general_settings: {
                         email: null,
                         contact_email: null,
-                        vkotzivi: null,
-                        boss: null,
-                        buh: null,
                         manager: null,
                         vk: null,
                         tg: null,
@@ -336,6 +300,14 @@
                 this.model.general_settings.seo_image = file;
 
                 this.seoPreviewImage = URL.createObjectURL(file);
+
+                this.$forceUpdate();
+            },
+
+            showPromFile(event) {
+                const file = event.target.files[0];
+
+                this.model.general_settings.prom = file;
 
                 this.$forceUpdate();
             },
@@ -397,6 +369,7 @@
                 this.seoPreviewImage = this.model.general_settings.seo_image;
 
                 this.model.general_settings.seo_image = null;
+                this.model.general_settings.prom = null;
             }
         },
     };

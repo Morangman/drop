@@ -28,24 +28,6 @@
             <div class="footer__mob__title">Связь с командой</div>
             <div class="footer__mob__adress"><span>{!! $content['footer_4']['value'] !!}</span></div>
             <div class="footer__mob__items">
-                <a href="{{ $settings->getAttribute('general_settings')['boss'] }}" target="_blank">
-                    <div class="footer__mob__item">
-                        <div class="footer__mob__item__img">
-                            <img src="{{ asset('client/img/auch/png/direct.png') }}" alt="">
-                        </div>
-                        <div class="footer__mob__item__title">Директор</div>
-                        <div class="footer__mob__item__subtitle">предложения и пожелания</div>
-                    </div>
-                </a>
-                <a href="{{ $settings->getAttribute('general_settings')['buh'] }}" target="_blank">
-                    <div class="footer__mob__item">
-                        <div class="footer__mob__item__img">
-                            <img src="{{ asset('client/img/auch/png/buhg.png') }}" alt="">
-                        </div>
-                        <div class="footer__mob__item__title">Бухгалтер</div>
-                        <div class="footer__mob__item__subtitle">финансы, взаиморасчеты с партнерами</div>
-                    </div>
-                </a>
                 <a href="{{ $settings->getAttribute('general_settings')['manager'] }}" target="_blank">
                     <div class="footer__mob__item">
                         <div class="footer__mob__item__img">
@@ -55,7 +37,6 @@
                         <div class="footer__mob__item__subtitle">по заказам и сотрудничеству</div>
                     </div>
                 </a>
-
             </div>
             <div class="footer__mob__foot">
                 <div class="footer__mob__foot__item">
