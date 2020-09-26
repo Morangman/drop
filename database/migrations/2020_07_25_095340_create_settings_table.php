@@ -22,7 +22,6 @@ class CreateSettingsTable extends Migration
             $table->bigIncrements('id');
             $table->json('general_settings');
             $table->text('code_insert')->nullable();
-            $table->string('prom_excel')->nullable();
             $table->timestamps();
         });
     }

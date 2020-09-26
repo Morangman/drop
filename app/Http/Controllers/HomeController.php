@@ -17,6 +17,7 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Notification;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\View;
+use Spatie\MediaLibrary\Models\Media;
 
 /**
  * Class HomeController
@@ -60,6 +61,29 @@ class HomeController extends Controller
             'settings' => $settings ?? [],
             'content' => json_decode(Storage::disk('file')->get('content.json'), true),
             'comments' => Comment::query()->where('is_hidden', false)->get() ?? []
+        ]);
+    }
+
+    /**
+     * @return \Illuminate\Contracts\View\View
+     *
+     * @throws \Illuminate\Contracts\Filesystem\FileNotFoundException
+     */
+    public function prom(): ViewContract
+    {
+        $settings = Setting::latest('updated_at')->first() ?? null;
+
+        return View::make('prom', [
+            'settings' => $settings ?? [],
+            'content' => json_decode(Storage::disk('file')->get('content.json'), true),
+            'files' => $settings->getMedia(Setting::MEDIA_COLLECTION_PROM_PRICE)
+                ->map(static function (Media $media) {
+                    return [
+                        'id' => $media->getKey(),
+                        'url' => $media->getFullUrl(),
+                        'title' => $media->getCustomProperty('title'),
+                    ];
+                })->toArray()
         ]);
     }
 

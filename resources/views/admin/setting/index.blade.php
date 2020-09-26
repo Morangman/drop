@@ -15,5 +15,6 @@
     <setting-index
         :settings="{{ json_encode($settings) }}"
         :content="{{ json_encode($content) }}"
+        :files="{{ json_encode($files) }}"
     ></setting-index>
 @endsection

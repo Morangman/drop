@@ -4,10 +4,10 @@ declare(strict_types = 1);
 
 namespace App\Http\Controllers\Admin;
 
-use App\Setting;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\Setting\StoreRequest;
 use App\Http\Requests\Admin\Setting\UpdateRequest;
+use App\Setting;
 use Illuminate\Contracts\View\View as ViewContract;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
@@ -15,6 +15,9 @@ use Illuminate\Support\Facades\Lang;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\View;
+use McMatters\Helpers\Helpers\ModelHelper;
+use Spatie\MediaLibrary\Models\Media;
+use Throwable;
 
 /**
  * Class SettingController
@@ -30,8 +33,18 @@ class SettingController extends Controller
      */
     public function index(): ViewContract
     {
+        $setting = Setting::latest('updated_at')->first() ?? (object)[];
+
         return View::make('admin.setting.index', [
-            'settings' => Setting::latest('updated_at')->first() ?? (object)[],
+            'settings' => $setting,
+            'files' => $setting->getMedia(Setting::MEDIA_COLLECTION_PROM_PRICE)
+                ->map(static function (Media $media) {
+                    return [
+                        'id' => $media->getKey(),
+                        'url' => $media->getFullUrl(),
+                        'title' => $media->getCustomProperty('title'),
+                    ];
+                })->toArray(),
             'content' => json_decode(Storage::disk('file')->get('content.json'), true)
         ]);
     }
@@ -78,35 +91,28 @@ class SettingController extends Controller
      */
     public function update(UpdateRequest $request, Setting $setting): JsonResponse
     {
-        $promExcel = '';
-        $seoImage = '';
-
-        if (isset($request->file('general_settings')['prom']) && $file = $request->file('general_settings')['prom']) {
-            $media = $setting->addMedia($file)
-                ->toMediaCollection(Setting::MEDIA_COLLECTION_SETTING);
-
-            $promExcel = $media->getFullUrl();
-        } else {
-            $promExcel = $request->get('general_settings')['prom'] ?? '';
-        }
-
         $settingData = $request->except(
                 [
                     'code_insert',
-                    'prom_excel',
                 ]
             ) + [
                 'code_insert' => $request->get('code_insert') ?? '',
-                'prom_excel' => $promExcel,
             ];
+
+        if (null !== $request->get('files') && $files = $request->file('files', [])) {
+            $reqFiles = $request->get('files');
+            foreach($files as $key => $file) {
+                $setting->addMedia($file['file'])
+                    ->withCustomProperties(['title' => $reqFiles[$key]['title']])
+                    ->toMediaCollection(Setting::MEDIA_COLLECTION_PROM_PRICE);
+            }
+        }
 
         $setting->update($settingData);
 
         $this->handleDocuments($request, $setting);
 
         if ($content = $request->get('content')) {
-            //Storage::disk('public')->delete('content.json');
-
             Storage::disk('file')->put('content.json', json_encode($content));
         }
 
@@ -151,7 +157,6 @@ class SettingController extends Controller
 
             $setting->update([
                 'code_insert' => $request->get('code_insert') ?? '',
-                'prom_excel' => $request->get('prom_excel') ?? '',
                 'general_settings' => [
                 'email' => $request->get('general_settings')['email'] ?? null,
                 'contact_email' => $request->get('general_settings')['contact_email'] ?? null,
@@ -166,7 +171,6 @@ class SettingController extends Controller
                 'seo_keywords' => $request->get('general_settings')['seo_keywords'] ?? null,
                 'seo_image' => $media->getFullUrl(),
                 'iframe_map' => $request->get('general_settings')['iframe_map'] ?? null,
-                'iframe_map' => $request->get('general_settings')['iframe_map'] ?? null,
             ]]);
         } elseif (
             $request->has('general_settings')['seo_image']
@@ -175,7 +179,6 @@ class SettingController extends Controller
         ) {
             $setting->update([
                 'code_insert' => $request->get('code_insert') ?? '',
-                'prom_excel' => $request->get('prom_excel') ?? '',
                 'general_settings' => [
                 'email' => $request->get('general_settings')['email'] ?? null,
                 'contact_email' => $request->get('general_settings')['contact_email'] ?? null,
@@ -192,5 +195,27 @@ class SettingController extends Controller
                 'iframe_map' => $request->get('general_settings')['iframe_map'] ?? null,
             ]]);
         }
+    }
+
+    /**
+     * @param \Spatie\MediaLibrary\Models\Media $media
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function deleteMedia(Media $media): JsonResponse
+    {
+        $setting = Setting::latest('updated_at')->first() ?? (object)[];
+
+        try {
+            if ($media->getAttribute('collection_name') === Setting::MEDIA_COLLECTION_PROM_PRICE
+                && ModelHelper::doesMorphedBelongToParent($media, $setting, 'model')
+            ) {
+                $setting->deleteMedia($media->getKey());
+            }
+        } catch (Throwable $e) {
+            return $this->json()->badRequest(['message' => $e->getMessage()]);
+        }
+
+        return $this->json()->noContent();
     }
 }

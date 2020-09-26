@@ -29,9 +29,8 @@ class StoreRequest extends FormRequest
                 'nullable',
                 'string',
             ],
-            'prom_excel' => [
+            'files' => [
                 'nullable',
-                'string',
             ],
         ];
     }

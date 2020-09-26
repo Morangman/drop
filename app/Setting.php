@@ -18,6 +18,7 @@ class Setting extends Model implements HasMedia
     use HasMediaTrait;
 
     public const MEDIA_COLLECTION_SETTING = 'setting';
+    public const MEDIA_COLLECTION_PROM_PRICE = 'prom_price';
 
     /**
      * @var string
@@ -30,7 +31,6 @@ class Setting extends Model implements HasMedia
     protected $fillable = [
         'general_settings',
         'code_insert',
-        'prom_excel',
     ];
 
     /**
@@ -39,6 +39,5 @@ class Setting extends Model implements HasMedia
     protected $casts = [
         'general_settings' => 'array',
         'code_insert' => 'string',
-        'prom_excel' => 'string',
     ];
 }

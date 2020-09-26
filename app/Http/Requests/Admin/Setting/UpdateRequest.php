@@ -29,11 +29,10 @@ class UpdateRequest extends FormRequest
                 'required',
                 'array',
             ],
-            'code_insert' => [
+            'files' => [
                 'nullable',
-                'string',
             ],
-            'prom_excel' => [
+            'code_insert' => [
                 'nullable',
                 'string',
             ],

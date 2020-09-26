@@ -1730,3 +1730,45 @@ h2 {
         transform:scale(1.5);
     }
 }
+
+.prom-prices {
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.prom-prices .container a{
+    font-size: 18px;
+    font-weight: 400;
+    padding-bottom: 30px;
+    display: block;
+    position: relative;
+}
+
+.prom-prices .container a{
+    font-size: 18px;
+    font-weight: 400;
+    padding-bottom: 30px;
+    display: block;
+    position: relative;
+}
+
+.prom-prices .container a:hover{
+    color: #0a6ebd;
+}
+
+.prom-prices .container a::before{
+    content: url(../img/auch/png/excel-file.png);
+    margin-right: 10px;
+    left: 0px;
+    top: 0px;
+}
+
+@media (max-width: 900px) {
+    .prom-prices .container a{
+        font-size: 10px;
+        font-weight: 400;
+        padding-bottom: 20px;
+        display: block;
+        position: relative;
+    }
+}

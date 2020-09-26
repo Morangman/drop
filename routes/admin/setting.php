@@ -21,3 +21,8 @@ Route::patch('{setting}', [
     'as' => '.update',
     'uses' => 'SettingController@update',
 ]);
+
+Route::delete('media/{media}', [
+    'as' => '.media.delete',
+    'uses' => 'SettingController@deleteMedia',
+]);

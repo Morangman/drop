@@ -15,9 +15,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'HomeController@index')->name('home');
 
-Route::post('/order', 'HomeController@makeOrder')->name('order');
+Route::get('/prom', 'HomeController@prom')->name('prom');
 
-Route::post('/comment', 'HomeController@addComment')->name('comment');
+Route::post('/order', 'HomeController@makeOrder')->name('order');
 
 Route::group([
     'namespace' => 'Auth',

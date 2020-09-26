@@ -90,17 +90,6 @@
                                 </div>
                                 <div class="form-group">
                                     <label>
-                                        <strong>Прайс prom.ua</strong>
-                                    </label>
-                                    <b-form-file
-                                        class="mt-1"
-                                        accept=".xlsx,.xls"
-                                        @change="showPromFile($event)"
-                                    ></b-form-file>
-                                    <a v-if="model.prom_excel" :href="model.prom_excel">Prom.ua прайс</a>
-                                </div>
-                                <div class="form-group">
-                                    <label>
                                         <strong>Инстаграм Аккаунт</strong>
                                     </label>
                                     <input
@@ -208,6 +197,47 @@
                         </div>
                     </div>
                 </b-tab>
+                <b-tab title="Prom.ua прайс">
+                    <div class="card">
+                    <div class="card-body">
+                        <div class="form-group">
+                            <span v-for="(file, index) in files">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="files">
+                                            <p>{{ file.title }}</p>
+                                            <a :href="file.url">{{ file.url }}</a>
+                                            <span class="input-group-btn">
+                                                <button v-on:click="deleteFile(file.id)" class="btn btn-default" type="button">{{ $t('common.word.delete') }}</button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </span>
+                            <span v-for="(file, index) in model.files">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="input-group">
+                                        <input type="text" v-model="file.title" class="form-control">
+                                        <b-form-file
+                                            class="form-control"
+                                            accept=".xls,.xlsx"
+                                            @change="addFileEvent($event, index)"
+                                        ></b-form-file>
+                                        <span class="input-group-btn">
+                                            <button v-on:click="removeFile(index)" class="btn btn-default" type="button">{{ $t('common.word.delete') }}</button>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            </span>
+                            <div class="card-body">
+                                <button v-on:click="addFile" class="btn btn-info">{{ $t('common.word.add') }}</button>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </b-tab>
             </b-tabs>
         </b-card>
         <div v-for="(error, i) in errors.general_settings"
@@ -264,6 +294,10 @@
                 type: Object,
                 required: false,
             },
+            files: {
+                type: Array,
+                required: false,
+            },
         },
 
         data() {
@@ -279,7 +313,6 @@
                         vk: null,
                         tg: null,
                         gd: null,
-                        prom: null,
                         inst: null,
                         phone: null,
                         seo_title: null,
@@ -288,6 +321,7 @@
                         seo_image: null,
                     },
                     content: {},
+                    files: [],
                     code_insert: null,
                 },
             };
@@ -304,14 +338,6 @@
                 this.$forceUpdate();
             },
 
-            showPromFile(event) {
-                const file = event.target.files[0];
-
-                this.model.general_settings.prom = file;
-
-                this.$forceUpdate();
-            },
-
             deleteSeoImage() {
                 this.model.general_settings.seo_image = null;
                 this.seoPreviewImage = null;
@@ -319,6 +345,39 @@
                 notify.success(
                     this.$t('admin.setting.messages.seo_image_delete')
                 );
+            },
+
+            deleteFile(media) {
+                confirmation.delete(() => {
+                    axios.delete(
+                        Router.route('admin.setting.media.delete', {media: media}),
+                    ).then((response) => {
+                        location.href = Router.route('admin.setting.index');
+                    }).catch(({response: {data: {errors}}}) => {
+                        this.errors = errors;
+                    });
+                });
+            },
+
+            addFileEvent(event, index) {
+                const file = event.target.files[0];
+
+                this.model.files[index].file = file;
+            },
+
+            addFile() {
+                this.model.files.push({
+                    title: null,
+                    file: null,
+                });
+
+                this.$forceUpdate();
+            },
+
+            removeFile(index) {
+                this.model.files.splice(index, 1);
+
+                this.$forceUpdate();
             },
 
             save() {
@@ -369,7 +428,8 @@
                 this.seoPreviewImage = this.model.general_settings.seo_image;
 
                 this.model.general_settings.seo_image = null;
-                this.model.general_settings.prom = null;
+
+                this.model.files = [];
             }
         },
     };

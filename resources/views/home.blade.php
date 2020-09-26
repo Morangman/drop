@@ -4,8 +4,7 @@
     @yield('header', View::make('header', ['settings' => $settings]))
     <div class="content">
         <section class="banner">
-            <div class="banner_bg">
-            </div>
+            <div class="banner_bg"></div>
             <div class="banner_cont">
                 <div class="container">
                     <div class="banner_container">
@@ -59,7 +58,7 @@
                     <div class="about_items__item">
                         <div class="about_items__item__img">
                             <img src="{{ asset('client/img/auch/png/us2.png') }}" alt="">
-                        </div></br>
+                        </div><br>
                         <div class="about_items__item__text">
                             <span>{!! $content['about_3']['value'] !!}</span>
                             <p>{!! $content['about_4']['value'] !!}</p>

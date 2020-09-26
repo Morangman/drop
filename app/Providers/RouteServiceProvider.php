@@ -91,6 +91,7 @@ class RouteServiceProvider extends ServiceProvider
             'comment' => Comment::class,
             'setting' => Setting::class,
             'nitification' => Notification::class,
+            'media' => Media::class,
         ];
 
         foreach ($models as $key => $class) {
