@@ -424,8 +424,18 @@ h2 {
   /*-webkit-box-shadow: 0px 4px 8px -3px #de000a;*/
   /*        box-shadow: 0px 4px 8px -3px #de000a;*/
   /*position: fixed;*/
+    background: #000;
+    display: flex;
   width: 100%;
   z-index: 2;
+}
+
+.header-back {
+    background-image: url(../img/auch/png/header_top.png);
+    width: 100%;
+    height: 112px;
+    background-size: 100%;
+    background-repeat: no-repeat;
 }
 
 .header_mob {
@@ -441,7 +451,7 @@ h2 {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 105px;
+  height: 40px;
 }
 
 .header_line__logo:hover {
@@ -465,7 +475,7 @@ h2 {
 .header_line__menu ul li a {
   padding-right: 30px;
   font-size: 20px;
-  color: #000000;
+  color: #ffff;
 }
 
 .header_line__menu ul li a:hover {
@@ -498,8 +508,12 @@ h2 {
     display: block;
     width: 100%;
     text-align: center;
-    padding: 16px 20px;
   }
+
+  .banner_bg{
+      margin-top: 40%;
+  }
+
   .header_mob ul li {
     padding: 9px 0;
     display: -webkit-box;
@@ -518,7 +532,7 @@ h2 {
   .header_mob ul li a {
     font-size: 13px;
     font-weight: 400;
-    color: #000000;
+    color: #fff;
   }
   .header_mob ul li a img {
     width: 106px;
@@ -837,14 +851,14 @@ h2 {
 }
 
 .banner_bg {
-  background: url(../img/auch/jpg/bg_head.jpg) top no-repeat;
+  background: url(../img/auch/png/header_back.png) top no-repeat;
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   z-index: -1;
-  opacity: 0.1;
+  background-size: 100%;
 }
 
 .banner_container {
@@ -852,6 +866,8 @@ h2 {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  justify-content: center;
+  align-items: center;
   -webkit-box-align: center;
   -webkit-align-items: center;
       -ms-flex-align: center;
@@ -864,6 +880,8 @@ h2 {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
+    display: flex;
+    flex-direction: column;
 }
 
 .banner_container__txt span {
@@ -1771,4 +1789,15 @@ h2 {
         display: block;
         position: relative;
     }
+}
+
+.head-top{
+    background-color: #000;
+}
+
+.head-top img{
+    width: 100%;
+    height: auto;
+    padding: 0;
+    margin: 0;
 }

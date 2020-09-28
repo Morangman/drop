@@ -20,7 +20,6 @@
                             <a href="{{ $settings->getAttribute('general_settings')['gd'] }}"><button class="docs">GOOGLE DOCS</button></a>
                         </div>
                         <div class="banner_container__txt">
-                            {!! $content['site_title']['value'] !!} <br/>
                             <div class="banner_container__button_txt">
                                 <a href="{{ $settings->getAttribute('general_settings')['tg'] }}" target="_blank" rel="noopener">
                                     <button class="tg"><svg width="19" height="17" viewBox="0 0 19 17" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -32,9 +31,6 @@
                             <div class="banner_container__button_txt">
                                 <a href="{{ $settings->getAttribute('general_settings')['gd'] }}"><button class="docs">GOOGLE DOCS</button></a>
                             </div>
-                        </div>
-                        <div class="banner_container__img">
-                            <img src="{{ asset('client/img/auch/png/shoes_bg.png') }}" alt="">
                         </div>
                     </div>
                 </div>
