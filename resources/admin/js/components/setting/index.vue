@@ -57,17 +57,6 @@
                                 </div>
                                 <div class="form-group">
                                     <label>
-                                        <strong>Группа Вконтакте</strong>
-                                    </label>
-                                    <input
-                                        name="phone"
-                                        type="text"
-                                        v-model="model.general_settings.vk"
-                                        class="form-control"
-                                    >
-                                </div>
-                                <div class="form-group">
-                                    <label>
                                         <strong>Телеграм канал</strong>
                                     </label>
                                     <input
@@ -85,17 +74,6 @@
                                         name="google_docs"
                                         type="text"
                                         v-model="model.general_settings.gd"
-                                        class="form-control"
-                                    >
-                                </div>
-                                <div class="form-group">
-                                    <label>
-                                        <strong>Инстаграм Аккаунт</strong>
-                                    </label>
-                                    <input
-                                        name="phone"
-                                        type="text"
-                                        v-model="model.general_settings.inst"
                                         class="form-control"
                                     >
                                 </div>
@@ -310,10 +288,8 @@
                         email: null,
                         contact_email: null,
                         manager: null,
-                        vk: null,
                         tg: null,
                         gd: null,
-                        inst: null,
                         phone: null,
                         seo_title: null,
                         seo_meta: null,

@@ -5,23 +5,10 @@
                 <p>Связь с командой:</p>
                 <span class="city">{!! $content['footer_4']['value'] !!}</span>
                 <a href="{{ $settings->getAttribute('general_settings')['manager'] }}" target="_blank"><span class="manager">Менеджер (по заказам и сотрудничеству)</span></a>
-            </div>
-            <div class="footer__middle">
-                <p>Наши соц. сети:</p>
-                <a href="{{ $settings->getAttribute('general_settings')['vk'] }}" target="_blank"><span class="vk">Группа Вконтакте</span></a>
                 <a href="{{ $settings->getAttribute('general_settings')['tg'] }}" target="_blank"><span class="telegra">Телеграм Канал</span></a>
-                <a href="{{ $settings->getAttribute('general_settings')['inst'] }}" target="_blank"><span class="insta">Инстаграм Аккаунт</span></a>
             </div>
             <div class="footer__right">
-                <div class="footer__right__info">
-                    <div class="footer__right__info__logo">
-                        <img src="{{ asset('client/img/auch/png/logow.png') }}" alt="">
-                    </div>
-                    <div class="footer__right__info__txt">
-                        <p>{!! $content['footer_2']['value'] !!}</p>
-                        <p>{!! $content['footer_3']['value'] !!}</p>
-                    </div>
-                </div>
+                <img src="{{ asset('client/img/auch/png/logo.jpg') }}" alt="">
             </div>
         </div>
         <div class="footer__mob">
@@ -37,22 +24,6 @@
                         <div class="footer__mob__item__subtitle">по заказам и сотрудничеству</div>
                     </div>
                 </a>
-            </div>
-            <div class="footer__mob__foot">
-                <div class="footer__mob__foot__item">
-                    <div class="footer__mob__foot__item__img">
-                        <img src="{{ asset('client/img/auch/png/banks.png') }}" alt="">
-                    </div>
-                    <p>{!! $content['footer']['value'] !!}</p>
-                    <p>{!! $content['footer_1']['value'] !!}</p>
-                </div>
-                <div class="footer__mob__foot__item">
-                    <div class="footer__mob__foot__item__img">
-                        <img src="{{ asset('client/img/auch/png/logosma.png') }}" alt="">
-                    </div>
-                    <p>{!! $content['footer_2']['value'] !!}</p>
-                    <p>{!! $content['footer_3']['value'] !!}</p>
-                </div>
             </div>
         </div>
 </footer>
