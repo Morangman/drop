@@ -758,7 +758,14 @@ h2 {
 
 @media (max-width: 900px) {
   .footer__mob {
-    display: block;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+  }
+  .footer-mob-logo{
+      width: 90px;
+      height: auto;
   }
   .footer__mob__title {
     color: #fff;
