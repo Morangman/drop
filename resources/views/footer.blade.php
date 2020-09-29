@@ -27,6 +27,7 @@
             </div>
             <a href="/"><img class="footer-mob-logo" src="{{ asset('client/img/auch/png/logo.jpg') }}" alt=""></a>
         </div>
+    </div>
 </footer>
 
 <div id="modal_form">
