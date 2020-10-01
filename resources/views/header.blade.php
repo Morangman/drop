@@ -8,7 +8,8 @@
                         <a href="/#o-nas">О нас</a>
                         <a href="/#nachat">Начать сотрудничество</a>
                         <a href="{{ URL::route('prom') }}">Прайс для prom.ua</a>
-                        <a href="/#nachat">Контакты</a>
+                        <a href="{{ URL::route('home') }}">Условия сотруднечесвта</a>
+                        <a href="/#footer">Контакты</a>
                     </li>
                 </ul>
             </div>
@@ -18,9 +19,9 @@
             <a href="/"><p style="font-family: Blushes; color: #fff; font-size: 25px">КРОССЫ.UA</p></a>
             <ul>
                 <li>
-                    <a href="/#nachat">Начать сотрудничество</a>
                     <a href="{{ URL::route('prom') }}">Прайс для prom.ua</a>
-                    <a href="/#nachat">Наши контакты</a>
+                    <a href="{{ URL::route('home') }}">Условия сотруднечесвта</a>
+                    <a href="/#footer">Наши контакты</a>
                     <a href="/#o-nas">О нас</a>
                 </li>
             </ul>

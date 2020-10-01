@@ -1,9 +1,10 @@
-<footer class="footer">
+<footer class="footer" id="footer">
     <div class="container">
         <div class="footer_cont">
             <div class="footer__left">
                 <p>Связь с командой:</p>
                 <span class="city">{!! $content['footer_4']['value'] !!}</span>
+                <a class="mob_tel" href="tel:+380993116906"><span>+380993116906</span></a>
                 <a href="{{ $settings->getAttribute('general_settings')['manager'] }}" target="_blank"><span class="manager">Менеджер (по заказам и сотрудничеству)</span></a>
                 <a href="{{ $settings->getAttribute('general_settings')['tg'] }}" target="_blank"><span class="telegra">Телеграм Канал</span></a>
             </div>
@@ -14,6 +15,7 @@
         <div class="footer__mob">
             <div class="footer__mob__title">Связь с командой</div>
             <div class="footer__mob__adress"><span>{!! $content['footer_4']['value'] !!}</span></div>
+            <div id="footer_phone" class="footer__mob__adress"><a href="tel:{{ $settings->getAttribute('general_settings')['phone'] }}"><span>{{ $settings->getAttribute('general_settings')['phone'] }}</span></a></div>
             <div class="footer__mob__items">
                 <a href="{{ $settings->getAttribute('general_settings')['manager'] }}" target="_blank">
                     <div class="footer__mob__item">

@@ -552,7 +552,7 @@ h2 {
  * FOOTER
  */
 .footer {
-    height: 290px;
+    height: 321px;
   background: #000;
   padding-top: 30px;
 }
@@ -791,6 +791,12 @@ h2 {
     top: 0;
     left: 0;
   }
+  #footer_phone span::before{
+      content: url(../img/auch/png/phonem.png);
+      position: absolute;
+      top: 0;
+      left: 0;
+  }
   .footer__mob__items {
     display: -webkit-box;
     display: -webkit-flex;
@@ -943,6 +949,16 @@ h2 {
     min-height: auto;
     padding: 40px 0;
   }
+
+    #how{
+        margin-top: 25px;
+    }
+
+    .cooperate__content__right__txt{
+        display: flex;
+        justify-content: center;
+    }
+
   .banner_container__txt {
     margin-bottom: 35px;
   }
@@ -1051,6 +1067,12 @@ h2 {
   content: url("../img/auch/icons/telegram.png");
   left: 0px;
   top: 10px;
+}
+
+.mob_tel span::before {
+    position: absolute;
+    content: url("../img/auch/png/phone.png");
+    left: 0px;
 }
 
 .social_items__item span:hover {
@@ -1361,6 +1383,11 @@ h2 {
   .kwest_cont_kanye img {
     width: 220px;
   }
+}
+
+.how_img{
+    width: 580px;
+    height: auto;
 }
 
 /**

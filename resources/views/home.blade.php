@@ -96,6 +96,30 @@
                 </div>
             </div>
         </section>
+        <section class="cooperate" id="how">
+            <div class="container">
+                <div class="cooperate__content">
+                    <div class="cooperate__content__left">
+                        <img class="how_img" src="{{ asset('client/img/auch/png/how.png') }}" alt="">
+                    </div>
+                    <div class="cooperate__content__right">
+                        <div class="cooperate__content__right__txt">
+                            <span>Как это работает?</span>
+                        </div>
+                        <div class="cooperate__content__right__taxt">
+                            <p>Зарабатывать на дропшиппинге с Кроссы.ua может каждый. Мы поможем Вам зарабатывать не переступая порог дома. <br/><br/>
+                                1. Вы находите клиента - он отправляет Вам заказ. <br/><br/>
+                                2. Вы предоставляете информацию о заказе нам. <br/><br/>
+                                3. Мы обрабатываем Ваш заказ: <br/><br/>
+                                а) отправляем Вашему клиенту наложенным платежом (без предоплаты) — покупатель осматривает и оплачивает товар на почте; <br/><br/>
+                                б) отправляем товар Вашему клиенту по полной предоплате на карту; <br/><br/>
+                                в) приглашаем Вашего клиента к нам в шоурум в городе Киев. <br/><br/>
+                                4. Ваш заработок переводим Вам удобным для Вас спобом.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
         <section class="art">
             <div class="line"></div>
         </section>
