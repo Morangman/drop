@@ -1551,6 +1551,7 @@ h2 {
   .cooperate {
     position: relative;
     overflow: hidden;
+      background-color: #fff!important;
   }
   .cooperate__content {
     margin-left: -15px;
@@ -1882,4 +1883,12 @@ h2 {
 
 .kwest .container{
     background-color: #000
+}
+
+.line{
+    padding-left: 75px;
+    padding-right: 75px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: #fff!important;
 }

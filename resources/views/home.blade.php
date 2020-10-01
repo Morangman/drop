@@ -31,6 +31,7 @@
                         </div>
                     </div>
                 </div>
+                <div class="line"><hr></div>
             </div>
         </section>
         <section class="about" id="o-nas">
@@ -94,6 +95,7 @@
                         </div>
                     </div>
                 </div>
+                <div class="line"><hr></div>
             </div>
         </section>
         <section class="cooperate" id="how">
@@ -118,11 +120,10 @@
                         </div>
                     </div>
                 </div>
+                <div class="line"><hr></div>
             </div>
         </section>
-        <section class="art">
-            <div class="line"></div>
-        </section>
+        <section class="art"></section>
         <section class="kwest">
             <div class="container">
                 <div class="kwest_txt">
@@ -167,6 +168,7 @@
                         <img src="{{ asset('client/img/auch/jpg/kross.jpg') }}" alt="">
                     </div>
                 </div>
+                <div class="line"><hr></div>
             </div>
         </section>
         <section class="cooperate" id="nachat">
