@@ -1892,3 +1892,15 @@ h2 {
     padding-bottom: 30px;
     background-color: #fff!important;
 }
+
+.term__content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.term__content img {
+    width: 100%;
+    height: auto;
+}

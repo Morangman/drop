@@ -88,6 +88,21 @@ class HomeController extends Controller
     }
 
     /**
+     * @return \Illuminate\Contracts\View\View
+     *
+     * @throws \Illuminate\Contracts\Filesystem\FileNotFoundException
+     */
+    public function terms(): ViewContract
+    {
+        $settings = Setting::latest('updated_at')->first() ?? null;
+
+        return View::make('terms', [
+            'settings' => $settings ?? [],
+            'content' => json_decode(Storage::disk('file')->get('content.json'), true),
+        ]);
+    }
+
+    /**
      * @param \App\Http\Requests\Admin\Order\StoreRequest $request
      *
      * @return \Illuminate\Http\JsonResponse

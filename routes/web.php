@@ -17,6 +17,8 @@ Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('/prom', 'HomeController@prom')->name('prom');
 
+Route::get('/terms', 'HomeController@terms')->name('terms');
+
 Route::post('/order', 'HomeController@makeOrder')->name('order');
 
 Route::group([
