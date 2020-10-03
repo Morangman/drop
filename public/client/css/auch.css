@@ -1375,13 +1375,8 @@ h2 {
     font-size: 13px;
     line-height: 13px;
   }
-  .kwest_cont_kanye {
-    position: absolute;
-    opacity: 0.2;
-    right: 0;
-  }
   .kwest_cont_kanye img {
-    width: 220px;
+    width: 100%;
   }
 }
 
@@ -1556,12 +1551,9 @@ h2 {
   .cooperate__content {
     margin-left: -15px;
     margin-right: -15px;
+    flex-direction: column;
   }
   .cooperate__content__left img {
-    position: absolute;
-    z-index: 1;
-    opacity: 0.1;
-    margin-top: 15px;
     width: 100%;
   }
   .cooperate__content__right {

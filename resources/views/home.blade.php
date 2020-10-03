@@ -126,6 +126,9 @@
         <section class="art"></section>
         <section class="kwest">
             <div class="container">
+                <div class="kwest_cont_kanye">
+                    <img src="{{ asset('client/img/auch/jpg/kross.jpg') }}" alt="">
+                </div>
                 <div class="kwest_txt">
                     <span>{!! $content['spros']['value'] !!}</span>
                 </div>
@@ -163,9 +166,6 @@
                                 <p>{!! $content['spros_4']['value'] !!}</p>
                             </div>
                         </div>
-                    </div>
-                    <div class="kwest_cont_kanye">
-                        <img src="{{ asset('client/img/auch/jpg/kross.jpg') }}" alt="">
                     </div>
                 </div>
                 <div class="line"><hr></div>
