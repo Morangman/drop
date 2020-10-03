@@ -1343,6 +1343,10 @@ h2 {
     padding-left: 10px;
 }
 
+.kwest_cont_kanye_top {
+    display: none;
+}
+
 @media (max-width: 900px) {
   .kwest_txt {
     padding-bottom: 20px;
@@ -1375,7 +1379,13 @@ h2 {
     font-size: 13px;
     line-height: 13px;
   }
-  .kwest_cont_kanye img {
+    .kwest_cont_kanye_top {
+        display: block;
+    }
+    .kwest_cont_kanye {
+        display: none;
+    }
+  .kwest_cont_kanye_top img {
     width: 100%;
   }
 }
