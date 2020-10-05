@@ -14,7 +14,6 @@
         </div>
         <div class="footer__mob">
             <div class="footer__mob__title">Связь с командой</div>
-            <div class="footer__mob__adress"><span>{!! $content['footer_4']['value'] !!}</span></div>
             <div id="footer_phone" class="footer__mob__adress"><a href="tel:{{ $settings->getAttribute('general_settings')['phone'] }}"><span>{{ $settings->getAttribute('general_settings')['phone'] }}</span></a></div>
             <div class="footer__mob__items">
                 <a href="{{ $settings->getAttribute('general_settings')['manager'] }}" target="_blank">
