@@ -20,7 +20,7 @@
             <ul>
                 <li>
                     <a href="{{ URL::route('prom') }}">Прайс для prom.ua</a>
-                    <a href="{{ URL::route('terms') }}">Условия сотруднечесвта</a>
+                    <a href="{{ URL::route('terms') }}">Условия сотрудничесвта</a>
                     <a href="/#footer">Наши контакты</a>
                     <a href="/#o-nas">О нас</a>
                 </li>
