@@ -8,7 +8,7 @@
                         <a href="/#o-nas">О нас</a>
                         <a href="/#nachat">Начать сотрудничество</a>
                         <a href="{{ URL::route('prom') }}">Прайс для prom.ua</a>
-                        <a href="{{ URL::route('terms') }}">Условия сотруднечесвта</a>
+                        <a href="{{ URL::route('terms') }}">Условия сотрудничесвта</a>
                         <a href="/#footer">Контакты</a>
                     </li>
                 </ul>
