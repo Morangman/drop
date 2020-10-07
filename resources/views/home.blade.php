@@ -15,7 +15,7 @@
                         </a>
                     </div><br/>
                     <div class="banner_container__button">
-                        <a href="{{ $settings->getAttribute('general_settings')['gd'] }}"><button class="docs">GOOGLE DOCS</button></a>
+                        <a href="{{ $settings->getAttribute('general_settings')['gd'] }}" target="_blank"><button class="docs">GOOGLE DOCS</button></a>
                     </div>
                     <div class="banner_container__txt">
                         <div class="banner_container__button_txt">
@@ -27,7 +27,7 @@
                             </a>
                         </div>
                         <div class="banner_container__button_txt">
-                            <a href="{{ $settings->getAttribute('general_settings')['gd'] }}"><button class="docs">GOOGLE DOCS</button></a>
+                            <a href="{{ $settings->getAttribute('general_settings')['gd'] }}" target="_blank"><button class="docs">GOOGLE DOCS</button></a>
                         </div>
                     </div>
                 </div>
