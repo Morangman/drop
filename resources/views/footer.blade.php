@@ -3,7 +3,7 @@
         <div class="footer_cont">
             <div class="footer__left">
                 <p>Связь с командой:</p>
-                <a class="mob_tel" href="tel:+380993116906"><span>+380993116906</span></a>
+                <a class="mob_tel" href="tel:{{ $settings->getAttribute('general_settings')['phone'] }}"><span>{{ $settings->getAttribute('general_settings')['phone'] }}</span></a>
                 <a href="{{ $settings->getAttribute('general_settings')['manager'] }}" target="_blank"><span class="manager">Менеджер (по заказам и сотрудничеству)</span></a>
                 <a href="{{ $settings->getAttribute('general_settings')['tg'] }}" target="_blank"><span class="telegra">Телеграм Канал</span></a>
             </div>
