@@ -29,7 +29,7 @@ class OrderObserver
     {
         Notification::send(
             User::query()->scopes(['notifiableUsers'])->get(),
-            new OrderNotification($order->getKey())
+            new OrderNotification($order->toArray())
         );
     }
 }

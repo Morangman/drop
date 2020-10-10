@@ -22,16 +22,16 @@ class OrderNotification extends Notification
     /**
      * @var array
      */
-    protected $orderId;
+    protected $order;
 
     /**
      * OrderNotification constructor.
      *
-     * @param int $orderId
+     * @param array $order
      */
-    public function __construct(int $orderId)
+    public function __construct(array $order)
     {
-        $this->orderId = $orderId;
+        $this->order = $order;
     }
 
     /**
@@ -56,7 +56,10 @@ class OrderNotification extends Notification
         return (new MailMessage)
             ->greeting('Вітаю!')
             ->line('Нове замовлення')
-            ->action('Замовлення', URL::route('admin.order.edit', ['order' => $this->orderId]))
+            ->line("Ім\'я: {$this->order['name']}")
+            ->line("Номер: {$this->order['phone']}")
+            ->line("Коментар: {$this->order['notes']}")
+            ->action('Замовлення', URL::route('admin.order.edit', ['order' => $this->order['id']]))
             ->salutation($date);
     }
 
@@ -69,7 +72,7 @@ class OrderNotification extends Notification
     {
         return [
             'title' => 'Нове замовлення',
-            'order_id' => $this->orderId,
+            'order_id' => $this->order['id'],
         ];
     }
 }
