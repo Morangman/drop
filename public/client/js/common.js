@@ -615,6 +615,8 @@ $(document).ready(function() {
 
         $('#loader').show();
 
+        ga('send', 'event', 'form', 'submit');
+
         let name = $('#name').val();
         let phone = $('#phone').val();
         let message = $('#message').val();
@@ -633,7 +635,6 @@ $(document).ready(function() {
                 $('#errorSubmit').hide();
                 $('#successSubmit').show();
 
-                ga('send', 'event', 'form', 'submit');
                 setTimeout(() => {
                     location.reload();
                 }, 1500);
