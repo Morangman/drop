@@ -633,6 +633,7 @@ $(document).ready(function() {
                 $('#errorSubmit').hide();
                 $('#successSubmit').show();
 
+                ga('send', 'event', 'form', 'submit');
                 setTimeout(() => {
                     location.reload();
                 }, 1500);
