@@ -615,7 +615,9 @@ $(document).ready(function() {
 
         $('#loader').show();
 
-        ga('send', 'event', 'form', 'submit');
+        gtag('event', 'submitForm',{
+            'event_category':'formSend'
+        });
 
         let name = $('#name').val();
         let phone = $('#phone').val();
