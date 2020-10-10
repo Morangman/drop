@@ -56,7 +56,7 @@ class OrderNotification extends Notification
         return (new MailMessage)
             ->greeting('Вітаю!')
             ->line('Нове замовлення')
-            ->line("Ім\'я: {$this->order['name']}")
+            ->line("Ім'я: {$this->order['name']}")
             ->line("Номер: {$this->order['phone']}")
             ->line("Коментар: {$this->order['notes']}")
             ->action('Замовлення', URL::route('admin.order.edit', ['order' => $this->order['id']]))
